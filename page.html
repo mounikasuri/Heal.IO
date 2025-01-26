@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(144, 190, 177);
+      }
+
+      .pgnav {
+        display: flex;
+        position: fixed;
+        background-color: white;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        border: 2px solid;
+        border-color: rgb(144, 190, 177);
+        box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .pghead {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .pgback p:hover {
+        color: aquamarine;
+      }
+
+      .pgback {
+        color: black;
+        font-weight: bolder;
+        font-size: xx-large;
+        cursor: pointer;
+      }
+
+      .pghead span {
+        color: rgb(35, 161, 126);
+      }
+      .io {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 8%;
+      }
+      .frm {
+        width: 40%;
+      }
+      .txtarea {
+        width: 100%;
+        height: 90px;
+        border: 3px solid;
+        border-color: rgb(35, 161, 126);
+        box-shadow: 10px 5px 10px rgb(0, 0, 0, 0.3);
+      }
+      .btn {
+        margin-left: 40%;
+        width: 90px;
+        height: 30px;
+        cursor: pointer;
+        border: 3px solid;
+        border-color: rgb(35, 161, 126);
+        box-shadow: 10px 5px 10px rgb(0, 0, 0, 0.3);
+      }
+      .output {
+        display: flex;
+        justify-content: center;
+        font-size: larger;
+      }
+      .h-2 {
+        margin-left: 5%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pgnav">
+      <div class="pghead"><span>Heal.</span>IO</div>
+      <div class="pgback" id="goback"><p title="Go to Home page"><</p></div>
+    </div>
+    <div class="io">
+      <form method="post" action="/predict" class="frm">
+        <textarea
+          class="txtarea"
+          placeholder="Enter the symptoms"
+          id="entered"
+          name="entered"
+        ></textarea>
+        <br />
+        <br />
+        <button class="btn" id="sub">Submit</button>
+      </form>
+    </div>
+    {% if response %}
+    <h2 class="h-2">Heal.io Support:</h2>
+    <div class="output"><p>{{response|safe}}</p></div>
+    {% endif %}
+
+    <script>
+      const data = document.getElementById("sub");
+      const backclk = document.getElementById("goback");
+      const data1 = document.getElementById("entered");
+
+      data.addEventListener("click", () => {
+        const entered_data = data1.value;
+      });
+
+      backclk.addEventListener("click", () => {
+        window.location.href = "/";
+      });
+    </script>
+  </body>
+</html>

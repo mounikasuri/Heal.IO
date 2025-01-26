@@ -1,0 +1,356 @@
+<html>
+  <head>
+    <!-- <link href="./style.css" rel="stylesheet" /> -->
+    <style>
+      /*project Heading style*/
+      .prname {
+        font-size: 30px;
+      }
+
+      .prname span {
+        font-size: 40px;
+        color: #60f4b1;
+        align-items: center;
+      }
+
+      /*Navbar Style*/
+
+      .navbar {
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 100%;
+        height: 70px;
+      }
+      .navmenu {
+        display: flex;
+        font-size: 18px;
+        flex-direction: row;
+        align-items: center;
+        font-weight: bold;
+        gap: 15px;
+      }
+      .navmenu p:hover {
+        color: #60f4b1;
+        transform: translate(-4px);
+      }
+      .navmenu p {
+        cursor: pointer;
+        transition: transform 0.5s ease;
+      }
+
+      /*Home Page Style*/
+
+      .homepg {
+        background-image: url(static/bgimage.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+      }
+
+      .homepg button {
+        cursor: pointer;
+        background-color: white;
+        border-radius: 5px;
+        border-width: 3px;
+        border-spacing: 2px;
+        font-size: medium;
+        margin-right: 500px;
+        padding: 5px 3px;
+        font-weight: bold;
+        border-color: green;
+        border: solid;
+        color: green;
+      }
+
+      .homepg button:hover {
+        background-color: papayawhip;
+      }
+
+      .homepg p {
+        font-size: 50px;
+        font-weight: bold;
+        color: green;
+      }
+
+      .homepg span {
+        font-size: 20px;
+        color: #216144;
+      }
+
+      .homepg sub {
+        font-size: 15px;
+        color: green;
+        font-weight: lighter;
+      }
+
+      /*About us Page Style*/
+
+      .abtpg {
+        background-image: url(static/abt.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 100px;
+        text-align: justify;
+        padding-bottom: 10px;
+      }
+
+      .abthd {
+        display: block;
+        color: rgb(77, 221, 171);
+        background-color: #c7ecdb;
+        text-align: justify;
+        margin-top: 4.5%;
+        width: 100%;
+        height: 10%;
+        font-size: 60px;
+        box-shadow: 0px 20px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .abtcnt {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 20px;
+        margin-bottom: 160px;
+        height: fit-content;
+        font-size: larger;
+        width: 900px;
+        background-color: #c0e9fd;
+        border-radius: 3%;
+        border: #c0e9fd solid;
+        border-width: 2px;
+        margin-left: 500px;
+        box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .abtcnt span {
+        font-size: x-large;
+        color: rgb(95, 95, 254);
+      }
+
+      .abtcnt button {
+        cursor: pointer;
+        background: transparent;
+        border-radius: 5px;
+        border-width: 3px;
+        border-spacing: 2px;
+        font-size: medium;
+        padding: 5px 3px;
+        font-weight: bold;
+        border: green solid;
+      }
+
+      /*Services page Style*/
+
+      .serpg {
+        background-color: #b0ddc9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 40px;
+        padding-top: 40px;
+        padding-left: 10px;
+        padding-right: 60px;
+      }
+
+      .servlist {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+      .servlist div {
+        display: block;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+        padding-top: 20px;
+        padding-left: 10px;
+        border-radius: 20px;
+        height: 200px;
+        width: 300px;
+        border: 2px solid;
+        margin: 10px;
+        background-color: #c0e9fd;
+        border-color: #c0e9fd;
+      }
+
+      /*contact us page styles*/
+
+      .cntpg {
+        background-image: url(static/cnt.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        align-content: center;
+      }
+      .cntinfo {
+        height: fit-content;
+        width: fit-content;
+        box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+        font-size: x-large;
+      }
+      .cntinfo h2 {
+        color: #1b9f64;
+      }
+      .cntinfo span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div>
+        <div class="navbar">
+          <div>
+            <p class="prname"><span>Heal</span>.IO</p>
+          </div>
+          <div class="navmenu">
+            <p id="home">Home</p>
+            <p id="about">About Us</p>
+            <p id="serv">Our services</p>
+            <p id="cnt">Contact Us</p>
+          </div>
+        </div>
+        <!--Homepage-->
+        <div class="homepg" id="hpg">
+          <p>
+            Hello <br />
+            Welcome to Heal.IO<sub>An application to predict diseases</sub>
+          </p>
+          <form action="/page">
+            <button title="click here to enter your symptoms">
+              Know Yourself
+            </button>
+          </form>
+        </div>
+        <hr />
+        <!--AboutUs Page-->
+        <div class="abtpg" id="apg">
+          <div class="abthd">About Us</div>
+          <div class="abtcnt">
+            Heal.IO is your one-stop platform for proactive health
+            management.<br />
+            We're a team of students dedicated to empowering individuals with
+            accessible and informative health tools. <br /><br /><span
+              >Our Mission:</span
+            >
+            At Heal.IO, we believe that knowledge is the key to better
+            health.<br />
+            <br /><span>We strive to:</span> Make health information accessible
+            and understandable for everyone.<br />
+            Leverage technology to provide personalized insights into potential
+            health concerns. Empower individuals to<br />
+            take preventative measures and manage their well-being.<br /><br />
+            <span>How Heal.IO Works:</span>Heal.IO utilizes advanced machine
+            learning algorithms to analyze user-reported<br />
+            symptoms and suggest potential disease matches.<br />
+            Always consult with a qualified healthcare professional for any
+            health concerns you may have.
+          </div>
+        </div>
+        <hr />
+        <!--OurServices Page-->
+        <div class="serpg" id="ser">
+          <img
+            src="static/doctor.png"
+            style="padding-top: 98px; padding-bottom: 88px"
+            height="85%"
+          />
+          <div class="servlist">
+            <div>
+              <b>Disease Prediction</b><br /><br />
+              model will let you know about which type of diseasee you may have
+            </div>
+            <div>
+              <b>Preventive Measures</b><br /><br />Our Model will let you know
+              the best Preventive methods for your problem
+            </div>
+            <div>
+              <b>Specialist Doctors</b><br /><br />Confused about which doctor
+              you should consult? <br />Leave it to us, we will let you know the
+              doctor's specialisation for your problem
+            </div>
+          </div>
+        </div>
+        <hr />
+        <!--ContactUs Page-->
+        <div class="cntpg" id="cont">
+          <div class="cntinfo">
+            <h2>Contact Us</h2>
+            <p><b>Ph-No:</b>+91 9999999999</p>
+            <p><b>Write to us at:</b>healio@gmail.com</p>
+            <p>
+              <span><b>Warning:</b></span> We Just provide the Information<b>
+                Do not </b
+              >consume any <br />medication without consulting Doctor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const homeclk = document.getElementById("home");
+      const abtclk = document.getElementById("about");
+      const servclk = document.getElementById("serv");
+      const cntclk = document.getElementById("cnt");
+      const navs = document.querySelectorAll(".navmenu p");
+
+      homeclk.addEventListener("click", function () {
+        document.getElementById("hpg").scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+
+      abtclk.addEventListener("click", (event) => {
+        document.getElementById("apg").scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+
+      servclk.addEventListener("click", (event) => {
+        document.getElementById("ser").scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+
+      cntclk.addEventListener("click", (event) => {
+        document.getElementById("cont").scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+
+      navs.forEach((nav) => {
+        nav.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          navs.forEach((nav) => nav.classList.remove("active"));
+
+          nav.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
